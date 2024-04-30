@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button, Col, Container, Form, FormControl, Nav, NavDropdown, Navbar, NavbarBrand, Row } from "react-bootstrap";
+import { IoSearch } from "react-icons/io5";
+import { FaRegUser } from "react-icons/fa6";
+import { FiShoppingCart } from "react-icons/fi";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Container fluid className="bg-light sticky-top px-3 py-4 align-items-center">
+                <Row>
+                    <Col lg={4}>
+                        <Row>
+                            <Col>
+                                <form className="d-flex " role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                                    <button class="btn btn-outline-dark" type="submit">
+                                        <IoSearch size={18} />
+                                    </button>
+                                </form>
+                            </Col>
+                            <Col lg={4} className="d-flex align-items-center justify-content-center">
+                                <NavbarBrand href="#home">Coma</NavbarBrand>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col lg={4}>
+                        <div className="d-flex">
+                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">
+                                            Brands
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col className="d-flex align-items-center justify-content-end px-5">
+                        <div>
+                            <FaRegUser size={22} />
+                            <FiShoppingCart className="ms-3" size={22} />
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+
+            {/* Footer */}
+            <Navbar bg="dark" variant="dark" fixed="bottom">
+                <Container>
+                    <Navbar.Brand href="#home">Footer</Navbar.Brand>
+                </Container>
+            </Navbar>
+        </div>
+    );
 }
 
 export default App;
