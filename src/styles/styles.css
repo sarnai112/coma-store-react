@@ -1,0 +1,30 @@
+.circle-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-icon {
+  width: 100%;
+  height: auto;
+}
+
+.bg-naver {
+  background-color: #24bb5a;
+}
+
+.bg-kakao {
+  background-color: #f5bc00;
+}
+
+.bg-insta {
+  background-color: #007bff;
+}

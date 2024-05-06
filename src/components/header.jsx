@@ -2,12 +2,13 @@ import { Col, Container, NavbarBrand, Row } from "react-bootstrap";
 import { IoSearch } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <Container
       fluid
-      className="bg-light sticky-top px-3 py-4 align-items-center"
+      className="mb-5 bg-light sticky-top px-3 py-4 align-items-center"
     >
       <Row>
         <Col lg={4}>
@@ -29,7 +30,9 @@ function Header() {
               lg={4}
               className="d-flex align-items-center justify-content-center"
             >
-              <NavbarBrand href="#home">Coma</NavbarBrand>
+              <Link to={"/"}>
+                <NavbarBrand>Coma</NavbarBrand>
+              </Link>
             </Col>
           </Row>
         </Col>
@@ -56,8 +59,12 @@ function Header() {
         </Col>
         <Col className="d-flex align-items-center justify-content-end px-5">
           <div>
-            <FaRegUser size={22} />
-            <FiShoppingCart className="ms-3" size={22} />
+            <Link to={"/login"}>
+              <FaRegUser size={22} />
+            </Link>
+            <Link to={"/cartView"}>
+              <FiShoppingCart className="ms-3" size={22} />
+            </Link>
           </div>
         </Col>
       </Row>

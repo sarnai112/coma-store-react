@@ -3,6 +3,10 @@ import Footer from "./components/footer";
 import ProductList from "./components/product_list";
 import images from "./images.jsx";
 import Header from "./components/header.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./layout/layout.jsx";
+import Login from "./pages/login.jsx";
+import CartView from "./pages/cartView.jsx";
 
 function App() {
   const listTitles = [
@@ -10,21 +14,21 @@ function App() {
       title: "New arrival",
       products: [
         {
-          title: "Leather long dress",
-          color: "핑크색",
-          price: "$350.0",
+          title: "short dress",
+          color: "pink",
+          price: "$99",
           image: images["Dress1"],
         },
         {
-          title: "Leather long dress2",
-          color: "파란색",
-          price: "$450.0",
+          title: "short dress",
+          color: "blue",
+          price: "$65",
           image: images["Dress2"],
         },
         {
-          title: "Leather long dress3",
-          color: "검은색",
-          price: "$550.0",
+          title: "short dress",
+          color: "black",
+          price: "$20",
           image: images["Dress3"],
         },
       ],
@@ -33,41 +37,63 @@ function App() {
       title: "Collection",
       products: [
         {
-          title: "Leather long dress",
-          color: "pink",
-          price: "$350.0",
-          image: images["Dress3"],
+          title: "long dress",
+          color: "purple",
+          price: "$120",
+          image: images["Dress4"],
         },
         {
-          title: "Leather long dress2",
-          color: "black",
-          price: "$450.0",
-          image: images["Dress3"],
-        },
-        {
-          title: "Leather long dress3",
+          title: "long dress",
           color: "white",
-          price: "$550.0",
-          image: images["Dress3"],
+          price: "$99",
+          image: images["Dress5"],
+        },
+        {
+          title: "long dress",
+          color: "white red",
+          price: "$35",
+          image: images["Dress6"],
         },
       ],
     },
     {
       title: "Most watched",
       products: [
-        { title: "Leather long dress", color: "pink", price: "$350.0" },
-        { title: "Leather long dress2", color: "black", price: "$450.0" },
-        { title: "Leather long dress3", color: "white", price: "$550.0" },
+        {
+          title: "long dress",
+          color: "white pink",
+          price: "$55",
+          image: images["Dress7"],
+        },
+        {
+          title: "short dress",
+          color: "blue",
+          price: "$85",
+          image: images["Dress8"],
+        },
+        {
+          title: "long dress",
+          color: "red",
+          price: "$110",
+          image: images["Dress9"],
+        },
       ],
     },
   ];
 
   return (
-    <div>
-      <Header />
-      <ProductList productTitles={listTitles} />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={<ProductList productTitles={listTitles} />}
+          ></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/cartView" element={<CartView />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
